@@ -61,7 +61,7 @@ define(function (require, exports, module) {
                     _counter = _counter + 1;
 
                     if (_counter <= MAX_CORRUPTION_TRIES) {
-                        _trytoCorrupt();
+                        setTimeout(_trytoCorrupt, 50);
                     } else {
                         console.log("Failed to corrupt Brackets history. Wrote to the file " + MAX_CORRUPTION_TRIES + " times");
                         
