@@ -9,11 +9,11 @@ This extension has been created for debugging https://github.com/adobe/brackets/
 3. Open Developer Tools (F12)
 4. Select `File -> Try to Corrupt (Ctrl+Alt+C)` or hit `Ctrl+Alt+C` to start the script
   - The script writes and then saves to the current document 50 times in a row
-  - Before and after saving the script checks the length of CodeMirror's History.done array. You will see one of the following messages:
+  - Before and after saving the script checks the length of CodeMirror's `document.history.done` array.
 
-When the script finishes, you should see `Failed to corrupt Brackets history. Wrote to the file 50 times`.
+When the script finishes, you should see a message in the console saying that *"Failed to corrupt Brackets history. Wrote to the file 50 times"*.
 
-However, if the history got corrupted during the process, you will see a warning saying that "Brackets history most likely corrupted, see Developer Tools -> Profiles for profile. It took `amount of` saves to corrupt the history. History object looks like this: `[Object history]`". 
+However, if the history got corrupted during the process (the length of the `history.done` array is suddenly `3`), you will see a warning saying that *"Brackets history most likely corrupted, see Developer Tools -> Profiles for profile. It took `amount of` saves to corrupt the history. History object looks like this: `[Object history]`"*. 
     
 Go to `Developer Tools -> Profile -> Brackets history corruption profile` and search for `_tryToCorrupt`. Select the the last one and start debugging.
     
