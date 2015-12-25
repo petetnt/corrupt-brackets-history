@@ -13,10 +13,9 @@ define(function (require, exports, module) {
     var _corruptionTries = 0;
     var _counter = 1;
 
-    function _reset() {
-        _corruptionTries = 0;
-    }
-
+    /**
+     * Tries to corrupt Brackets history by continuously writing and saving to the active file
+     */
     function _trytoCorrupt() {
         var editor = EditorManager.getFocusedEditor();
         if (editor) {

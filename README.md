@@ -1,6 +1,6 @@
 # Brackets Corrupt History
 
-This extension has been created for debugging https://github.com/adobe/brackets/issues/11826, the notorious undo history reset history.
+This extension has been created for debugging https://github.com/adobe/brackets/issues/11826, the notorious undo history reset bug.
 
 ## How to use
 
